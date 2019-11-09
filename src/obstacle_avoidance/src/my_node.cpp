@@ -1,9 +1,8 @@
 /*
  * Created By: Gareth Ellis
  * Created On: July 16th, 2016
- * Description: An example node that subscribes to a topic publishing strings,
- *              and re-publishes everything it receives to another topic with
- *              a "!" at the end
+ * Description: A node that subscribes to a Laser scan message and re-publishes a twist message
+ *              to direct the robot to its next point
  */
 
 #include <MyNode.h>
@@ -12,7 +11,7 @@
 
 int main(int argc, char **argv){    //main program, executed from there
     // Setup your ROS node
-    std::string node_name = "position";
+    std::string node_name = "move_bot";
 
     // Create an instance of your class, calls MyNode.cpp
     MyClass my_class(argc, argv, node_name);

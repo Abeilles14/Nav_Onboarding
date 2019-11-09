@@ -21,15 +21,15 @@
 class MyNodeTest : public testing::Test{
 protected:
     virtual void SetUp(){
-        test_publisher = nh_.advertise<std_msgs::String>("subscribe_topic", 1);
-        test_subscriber = nh_.subscribe("/my_node/publish_topic", 1, &MyNodeTest::callback, this);
+        test_publisher = node_.advertise<std_msgs::String>("subscribe_topic", 1);
+        test_subscriber = node_.subscribe("/my_node/publish_topic", 1, &MyNodeTest::callback, this);
 
         // Let the publishers and subscribers set itself up timely
         ros::Rate loop_rate(1);
         loop_rate.sleep();
     }
 
-    ros::NodeHandle nh_;
+    ros::NodeHandle node_;
     std::string message_output;
     ros::Publisher test_publisher;
     ros::Subscriber test_subscriber;

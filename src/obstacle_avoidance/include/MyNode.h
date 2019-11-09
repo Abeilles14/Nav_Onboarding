@@ -1,9 +1,8 @@
 /*
  * Created By: Gareth Ellis
  * Created On: July 16th, 2016
- * Description: An example node that subscribes to a topic publishing strings,
- *              and re-publishes everything it receives to another topic with
- *              a "!" at the end
+ * Description: A node that subscribes to a Laser scan message and re-publishes a twist message
+ *              to direct the robot to its next point
  */
 
 #ifndef SAMPLE_PACKAGE_MYNODE_H
